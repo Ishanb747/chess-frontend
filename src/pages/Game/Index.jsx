@@ -47,7 +47,7 @@ const Game = () => {
   }, [location.search]);
 
   useEffect(() => {
-    socketRef.current = io('https://chess-backend-6uu6.onrender.com/');
+    socketRef.current = io('https://chess-backend-6uu6.onrender.com');
 
     socketRef.current.emit('join', { name: playerName.current, gameID: gameID.current }, ({ error, color }) => {
       if (error) {
